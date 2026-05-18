@@ -1,7 +1,9 @@
-const SibApiV3Sdk = require('@getbrevo/brevo');
+const Brevo = require('@getbrevo/brevo');
 
-const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
-apiInstance.authentications['api-key'].apiKey = process.env.BREVO_API_KEY;
+const client = Brevo.ApiClient.instance;
+client.authentications['api-key'].apiKey = process.env.BREVO_API_KEY;
+
+const apiInstance = new Brevo.TransactionalEmailsApi();
 
 /**
  * Send a transactional email via Brevo
@@ -13,7 +15,7 @@ apiInstance.authentications['api-key'].apiKey = process.env.BREVO_API_KEY;
  * @param {Array} options.attachments - Optional attachments [{name, content (base64)}]
  */
 async function sendEmail({ to, toName, subject, html, attachments = [] }) {
-  const email = new SibApiV3Sdk.SendSmtpEmail();
+  const email = new Brevo.SendSmtpEmail();
 
   email.sender = {
     email: process.env.BREVO_SENDER_EMAIL,
