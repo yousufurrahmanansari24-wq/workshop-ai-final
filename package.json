@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@getbrevo/brevo": "^2.0.0",
+    "axios": "^1.6.0",
     "@sparticuz/chromium": "^123.0.0",
     "airtable": "^0.12.2",
     "cloudinary": "^2.2.0",
