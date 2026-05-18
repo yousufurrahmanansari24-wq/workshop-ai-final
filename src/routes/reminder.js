@@ -1,4 +1,4 @@
-const baseStyle = require('./baseStyle');
+const { reminderEmail } = require('../templates/emails/reminder');
 
 function reminderEmail({ studentName, workshopTitle, workshopType, startDate, venue, zoomLink, zoomPassword, organizationName, logoUrl, isOnehour }) {
   const dateStr = new Date(startDate).toDateString();
